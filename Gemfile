@@ -37,4 +37,14 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'bootstrap-sass', '~> 3.2.0'
+group :development, :test do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'rspec-rails', '~> 3.0.0'
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "pry"
+  gem 'jasmine'
+  gem 'database_cleaner'
+end
