@@ -1,0 +1,33 @@
+<div class="col-md-4">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <span class="glyphicon glyphicon-tag"></span>
+         <%= product.name %> 
+      </h3>
+    </div>
+    <div class="panel-body">
+      <%= image_tag "product_bg.jpg", class:"img-responsive img-thumbnail" %>
+      <h5><%= simple_format(product.description) %></h5>
+      <h5>$<%= product.price %></h5>
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">Qty:</div>
+            <select class="form-control" style="width:30%;">
+              <option selected>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <button type="button" id=" " class="btn btn-default" data-toggle="modal" data-target="#sold_out_modal" style="margin-left:5%;">
+              <b class="glyphicon glyphicon-shopping-cart"></b> Checkout!
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

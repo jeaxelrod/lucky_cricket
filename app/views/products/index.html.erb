@@ -26,99 +26,12 @@
     </div>
     <div class="" id="products">
       <div class="row col-md-10 col-md-offset-1" style="margin-top:20px;">
-        <div class="col-md-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">
-                <span class="glyphicon glyphicon-tag"></span> Original Cricket Flour
-              </h3>
-            </div>
-            <div class="panel-body">
-              <%= image_tag "product_bg.jpg", class:"img-responsive img-thumbnail" %>
-              <h5>100% Pure Cricket</h5>
-              <h5>100 grams (approx 10 servings)</h5>
-              <h5>$20.00</h5>
-              <form class="form-inline" role="form">
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon">Qty:</div>
-                    <select class="form-control" style="width:30%;">
-                      <option selected>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <button type="button" id=" " class="btn btn-default" data-toggle="modal" data-target="#sold_out_modal" style="margin-left:5%;">
-                      <b class="glyphicon glyphicon-shopping-cart"></b> Checkout!
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><span class="glyphicon glyphicon-tag"></span> Red Pepper & Cilantro Flour</h3>
-            </div>
-            <div class="panel-body">
-              <%= image_tag("product_bg.jpg", class:"img-responsive img-thumbnail") %>
-              <h5>100% Pure Cricket with that extra kick for those savory protein pastries</h5>
-              <h5>100 grams (approx 10 servings)</h5>
-              <h5>$20.00</h5>
-              <form class="form-inline" role="form">
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon">Qty:</div>
-                    <select class="form-control" style="width:30%;">
-                      <option selected>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <button type="button" id=" " class="btn btn-default" data-toggle="modal" data-target="#sold_out_modal" style="margin-left:5%;"><b class="glyphicon glyphicon-shopping-cart"></b> Checkout!</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><span class="glyphicon glyphicon-tag"></span> Apple & Cinnamon Flour</h3>
-            </div>
-            <div class="panel-body">
-              <%= image_tag "product_bg.jpg", class:"img-responsive img-thumbnail" %>
-              <h5>100% Pure Cricket with that added taste for your baked sweets</h5>
-              <h5>100 grams (approx 10 servings)</h5>
-              <h5>$20.00</h5>
-              <form class="form-inline" role="form">
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon">Qty:</div>
-                    <select class="form-control" style="width:30%;">
-                      <option selected>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <button type="button" id=" " class="btn btn-default" data-toggle="modal" data-target="#sold_out_modal" style="margin-left:5%;"><b class="glyphicon glyphicon-shopping-cart"></b> Checkout!</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+        <% @products.each do |product| %>
+          <%= render :partial => "products", :locals => {:product => product} %>
+        <% end %>
       </div>
     </div>
+  </div>
   <div class="modal fade" id="sold_out_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog ">
       <div class="modal-content">
