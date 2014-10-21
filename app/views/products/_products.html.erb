@@ -10,23 +10,18 @@
       <%= image_tag "product_bg.jpg", class:"img-responsive img-thumbnail" %>
       <h5><%= simple_format(product.description) %></h5>
       <h5>$<%= product.price %></h5>
-      <form class="form-inline" role="form">
+      <%= form_tag customers_new_path, method: :put, class: "form-inline", role:"form", remote: true do %>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon">Qty:</div>
-            <select class="form-control" style="width:30%;">
-              <option selected>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-            <button type="button" id=" " class="btn btn-default" data-toggle="modal" data-target="#sold_out_modal" style="margin-left:5%;">
-              <b class="glyphicon glyphicon-shopping-cart"></b> Checkout!
-            </button>
+            <%= select_tag :quantity, options_for_select(1..5), class:"form-control" %>
+            <%= hidden_field_tag :product_id, product.id %>
+            <%= button_to  class: "btn btn-default", data: {toggle: "modal", target:"#sold_out_modal"} do %>
+              <b class="glyphicon glyphicon-shopping-cart"></b> Pre-order 
+            <% end %>
           </div>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
 </div>

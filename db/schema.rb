@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141020224118) do
 
   create_table "orders", force: true do |t|
     t.text     "comments"
+    t.integer  "quantity"
     t.integer  "product_id"
     t.integer  "customer_id"
     t.datetime "created_at"
