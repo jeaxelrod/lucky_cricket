@@ -1,0 +1,11 @@
+<%= form_for @customer, remote: true do |customer| %>
+  <%= customer.text_field :email, class: "required email form-control",
+                                  id: "mce-EMAIL",
+                                  placeholder: "Enter Your E-Mail" %>
+  <span class="input-group-btn">
+    <%= customer.submit "Subscribe", name: "subscribe", 
+                                     class: "btn btn-default",
+                                     id: "mc-embedded-subscribe" %>
+  </span>
+<% end %>
+

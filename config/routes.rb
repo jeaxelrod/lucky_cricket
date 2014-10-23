@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'customers/create'
   put 'customers/new'
+  resources :customers
 
   get 'products/index'
   root 'products#index'

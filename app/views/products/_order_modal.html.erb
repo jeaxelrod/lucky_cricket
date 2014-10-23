@@ -7,7 +7,7 @@
         <h2><%= @params %></h2>
       </div>
       <div class="modal-body">
-        <%= form_for @customer, url: root_url, html: { class: "form_horizontal", role: "form"} do |customer| %>
+        <%= form_for @customer, remote: true, html: { class: "form_horizontal", role: "form"} do |customer| %>
           <div class="form-group">
             <h2><%= "#{pluralize(@quantity, 'order')} of #{@product.name}" %></h2>
           </div>
@@ -39,9 +39,10 @@
             <%= customer.fields_for :orders do |order| %>
               <div class="col-sm-6"><span> Comments: </span>
                 <%= order.text_area :comments, class:"form-control",
-                                              rows: "3",
-                                              id: "comm" %>
+                                               rows: "3",
+                                               id: "comm" %>
                 <%= order.hidden_field :quantity, value: @quantity %>
+                <%= order.hidden_field :product_id, value: @product.id %>
               </div>
             <% end %>
           </div>
@@ -50,9 +51,8 @@
             <%= customer.submit "Checkout", class:"btn btn-danger", id:"review" %>
           </div>
       <% end %>
-        <div class="form-horizontal form-view hidden">We apologize, we are currently back-ordered. Please subscribe below to be placed on the waiting list! We promise the only email you will receive is when we are ready to ship your flour.</h5>
+        <div id="email_customer" class="form-horizontal form-view hidden">We apologize, we are currently back-ordered. Please subscribe below to be placed on the waiting list! We promise the only email you will receive is when we are ready to ship your flour.</h5>
           <div class="mc-field-group input-group col-md-8"><span class="input-group-addon">@</span>
-            <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Enter Your E-Mail"><span class="input-group-btn"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default"></span>
           </div>
         </div>
       </div>
