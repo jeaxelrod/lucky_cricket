@@ -7,41 +7,54 @@
         <h2><%= @params %></h2>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" role="form">
+        <%= form_for @customer, url: root_url, html: { class: "form_horizontal", role: "form"} do |customer| %>
+          <div class="form-group">
+            <h2><%= "#{pluralize(@quantity, 'order')} of #{@product.name}" %></h2>
+          </div>
           <div class="form-group">
             <h4 class="col-sm-2">Name:</h4>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="fn" placeholder="First Name">
+              <%= customer.text_field :first_name, class: "form-control", 
+                                                   id:"fn", 
+                                                   placeholder: "First Name" %>
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="ln" placeholder="Last Name">
+              <%= customer.text_field :last_name, class: "form-control", 
+                                                  id: "fn", 
+                                                  placeholder: "Last Name" %>
             </div>
           </div>
           <div class="form-group">
             <h4 class="col-sm-2">Zip:</h4>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="add" placeholder="Zip Code">
+              <%= customer.text_field :zip, class: "form-control",
+                                            id:"add", 
+                                            placeholder: "Zip Code" %>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-4 col-sm-offset-1">
-              <label>
-                <input type="radio" name="optionsRadios" id="1d" value="1">Free Standard Shipping</label>
+              <h4>Free Standard Shipping</h4>
             </div>
-            <div class="col-sm-6"><span> Comments: </span>
-              <textarea class="form-control" rows="3" id="comm"></textarea>
-            </div>
+            <%= customer.fields_for :orders do |order| %>
+              <div class="col-sm-6"><span> Comments: </span>
+                <%= order.text_area :comments, class:"form-control",
+                                              rows: "3",
+                                              id: "comm" %>
+                <%= order.hidden_field :quantity, value: @quantity %>
+              </div>
+            <% end %>
           </div>
-      </form>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= customer.submit "Checkout", class:"btn btn-danger", id:"review" %>
+          </div>
+      <% end %>
         <div class="form-horizontal form-view hidden">We apologize, we are currently back-ordered. Please subscribe below to be placed on the waiting list! We promise the only email you will receive is when we are ready to ship your flour.</h5>
           <div class="mc-field-group input-group col-md-8"><span class="input-group-addon">@</span>
             <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Enter Your E-Mail"><span class="input-group-btn"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default"></span>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger" id="review">Checkout!</button>
       </div>
     </div>
   </div>

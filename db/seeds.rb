@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-original = Product.create(name: "Original Cricket Flout")
+original = Product.create(name: "Original Cricket Flour")
 original.description = "100% Pure Cricket \n\n 100 grams(approx 10 servings)"
 original.price = 20.00
 original.save

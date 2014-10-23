@@ -16,8 +16,8 @@
             <div class="input-group-addon">Qty:</div>
             <%= select_tag :quantity, options_for_select(1..5), class:"form-control" %>
             <%= hidden_field_tag :product_id, product.id %>
-            <%= button_to  class: "btn btn-default", data: {toggle: "modal", target:"#sold_out_modal"} do %>
-              <b class="glyphicon glyphicon-shopping-cart"></b> Pre-order 
+            <%= button_to '#', class: "btn btn-default checkout", data: {toggle: "modal", target:"#sold_out_modal"} do %>
+              <b class="glyphicon glyphicon-shopping-cart"></b> Checkout 
             <% end %>
           </div>
         </div>
