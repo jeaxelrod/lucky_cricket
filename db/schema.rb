@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20141020224118) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "boards", force: true do |t|
+    t.text     "white"
+    t.text     "black"
+    t.string   "game_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "customers", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -27,6 +38,13 @@ ActiveRecord::Schema.define(version: 20141020224118) do
     t.integer  "quantity"
     t.integer  "product_id"
     t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pending_players", force: true do |t|
+    t.boolean  "game_requested", default: false
+    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
