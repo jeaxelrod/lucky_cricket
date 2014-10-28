@@ -15,18 +15,18 @@
 <div class="container-fluid">
   <div class="tab-content">
     <div class="active col-md-12 col-sm-12 col-xs-12" id="home">
-      <h2 style="position:relative;top:150px;color:white;">Shipped from CA. 100% Guarantee. Order now for free same-day shipping!</h2>
+      <h2 >Shipped from CA. 100% Guarantee. Order now for free same-day shipping!</h2>
     </div>
     <div class="" id="products">
-      <div class="row col-md-10 col-md-offset-1" style="margin-top:20px;">
+      <div class="row col-md-10 col-md-offset-1"> 
         <% @products.each do |product| %>
           <%= render :partial => "products", :locals => {:product => product} %>
         <% end %>
       </div>
     <div class="col-md-12 col-sm-12 col-xs-12" id="about_us">
       <div id="about_text">
-        <h2 style="position:relative;left:15%;top:50px;color:#E9967A;">About Us</h2>
-        <p style="position:relative;left:15%;top:50px;color:#E9967A;">We are a start-up in the bay comitted to sustainable sources of food for the human race. We source our crickets from the very best of farms, comitted to excellence and surpassing all processing regulations. All of our cricket flour
+        <h2>About Us</h2>
+        <p>We are a start-up in the bay comitted to sustainable sources of food for the human race. We source our crickets from the very best of farms, comitted to excellence and surpassing all processing regulations. All of our cricket flour
               is ready to use, and ships to you same day from our California facility.</p>
       </div>
     </div>
