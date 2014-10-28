@@ -1,7 +1,11 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-    <h1 class="pull-left col-md-7"> LuckyCricket Flour <small>&#8482;</small></h1>
-    <ul class="nav nav-pills pull-right col-md-4" role="tablist">
+  <div class="container-fluid col-md-12">
+    <h1 class="company pull-left col-md-7"> 
+      <img class="logo" src="http://placehold.it/40" />
+      LuckyCricket Flour 
+      <small>&#8482;</small>
+    </h1>
+    <ul class="nav nav-pills pull-right col-md-3" role="tablist">
       <li class="active"><a href="#home">Home</a>
       </li>
       <li><a href="#about_us">About Us</a>
@@ -12,7 +16,7 @@
   </div>
 </nav>
 
-<div class="container-fluid">
+<div class="content container-fluid">
   <div class="tab-content">
     <div class="active col-md-12 col-sm-12 col-xs-12" id="home">
       <h2 >Shipped from CA. 100% Guarantee. Order now for free same-day shipping!</h2>
@@ -23,8 +27,9 @@
           <%= render :partial => "products", :locals => {:product => product} %>
         <% end %>
       </div>
-    <div class="col-md-12 col-sm-12 col-xs-12" id="about_us">
-      <div id="about_text">
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12" id="about-us">
+      <div id="about-text">
         <h2>About Us</h2>
         <p>We are a start-up in the bay comitted to sustainable sources of food for the human race. We source our crickets from the very best of farms, comitted to excellence and surpassing all processing regulations. All of our cricket flour
               is ready to use, and ships to you same day from our California facility.</p>

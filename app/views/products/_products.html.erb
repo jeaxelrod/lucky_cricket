@@ -9,7 +9,7 @@
     <div class="panel-body">
       <%= image_tag "product_bg.jpg", class:"img-responsive img-thumbnail" %>
       <h5><%= simple_format(product.description) %></h5>
-      <h5>$<%= product.price %></h5>
+      <h5><p>$<%= number_with_precision(product.price, precision: 2) %></p></h5>
       <%= form_tag customers_new_path, method: :put, class: "form-inline", role:"form", remote: true do %>
         <div class="form-group">
           <div class="input-group">
