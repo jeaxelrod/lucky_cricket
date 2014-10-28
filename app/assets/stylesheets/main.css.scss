@@ -31,11 +31,6 @@ ul.nav.nav-pills>li.active>a:focus {
 .nav-pills>li>a {
   color: #E9967A;
 }
-#home {
-  width: 100%;
-  background-image: image-url('baking.jpg');
-  background-size: cover;
-}
 #home h2 {
   position: relative;
   top: 150px;
@@ -68,20 +63,22 @@ div.container-fluid {
   padding: 0px 0px;
   color: white;
   background-image: image-url('baking.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   text-align: center;
 }
 #products > div {
-  margin-top: 40px;
   margin-bottom: 40px;
   clear: both;
+}
+#products .col-md-4 {
+  margin-top: 40px;
 }
 #about-us {
   background-image: image-url('about_bg.jpg');
   background-position: center top;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
   width: 100%;
