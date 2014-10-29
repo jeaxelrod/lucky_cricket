@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0'
 gem 'pg'
 ruby "2.1.1"
+gem 'newrelic_rpm'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
