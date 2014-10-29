@@ -6,33 +6,32 @@
       <small>&#8482;</small>
     </h1>
     <ul class="nav nav-pills pull-right col-md-3" role="tablist">
-      <li class="active"><a href="#home">Home</a>
+      <li role="presentation" class="">
+        <a href="#home">Home</a>
       </li>
-      <li><a href="#about_us">About Us</a>
+      <li role="presentation">
+        <a href="#products">Products</a>
       </li>
-      <li><a href="#products">Products</a>
+      <li role="presentation">
+        <a href="#about-us">About Us</a>
       </li>
     </ul>
   </div>
 </nav>
 
 <div class="content container-fluid">
-  <div class="tab-content">
-    <div class="active col-md-12 col-sm-12 col-xs-12" id="home">
-      <h1>From smooties to cookies</h1>
-      <h2>100% Guarantee. Order now for free same-day shipping!</h2>
-    </div>
-    <div class="" id="products">
-      <div class="row col-md-10 col-md-offset-1"> 
-        <% @products.each do |product| %>
-          <%= render :partial => "products", :locals => {:product => product} %>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-md-12 col-sm-12 col-xs-12" id="about-us">
-      <div id="about-text" class="clearfix">
-        <p>We are a start-up in the bay area committed to providing cricket flour to the average American. We source our crickets from the very best of FDA-registered farms, committed to excellence and surpassing all processing regulations. All of our cricket flour is ready to use, and ships to you same day from our California facility.</p>
-      </div>
+  <div class="col-md-12 col-sm-12 col-xs-12" id="home" name="home">
+    <h1>From smooties to cookies</h1>
+    <h2>100% Guarantee. Order now for free same-day shipping!</h2>
+  </div>
+  <div id="products" class="row col-md-10 col-md-offset-1"> 
+    <% @products.each do |product| %>
+      <%= render :partial => "products", :locals => {:product => product} %>
+    <% end %>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12" id="about-us" name="about-us">
+    <div id="about-text" class="clearfix">
+      <p>We are a start-up in the bay area committed to providing cricket flour to the average American. We source our crickets from the very best of FDA-registered farms, committed to excellence and surpassing all processing regulations. All of our cricket flour is ready to use, and ships to you same day from our California facility.</p>
     </div>
   </div>
   <div id="modal"></div>
