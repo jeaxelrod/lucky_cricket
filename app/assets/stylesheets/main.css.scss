@@ -31,9 +31,13 @@ ul.nav.nav-pills>li.active>a:focus {
 .nav-pills>li>a {
   color: #E9967A;
 }
-#home h2 {
+#home h1,
+#home h2{
   position: relative;
   top: 150px;
+}
+#home h1 {
+  font-size: 80px;
 }
 .nav-tabs > li,
 .nav-pills > li {
@@ -91,6 +95,13 @@ div.container-fluid {
   width: 80%;
   margin: 75px auto;
 }
+#about-text p {
+  width: 50%;
+  float: right;
+  color: #8A0707;
+  font-size: 20px;
+  margin-top: 100px;
+}
 .img-responsive {
   margin: 20px 0px;
 }
@@ -133,6 +144,9 @@ div.input-group-addon {
   h1.company {
     font-size: 30px;
   }
+  #about-text p {
+    margin-top: 0;
+  }
 }
 @media (max-width: 800px) { 
   #home, #about-us {
@@ -140,6 +154,9 @@ div.input-group-addon {
   }
   h1.company {
     font-size: 20px;
+  }
+  #about-text p {
+    font-size: 15px;
   }
 }
 @media (max-width: 600px) { 
