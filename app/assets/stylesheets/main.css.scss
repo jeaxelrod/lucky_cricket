@@ -158,6 +158,13 @@ div.input-group-addon {
   #about-text p {
     font-size: 15px;
   }
+  #home h1 {
+    font-size: 50px;
+    top: 100px;
+  } 
+  #home h2 {
+    top: 100px;
+  }
 }
 @media (max-width: 600px) { 
   #home, #about-us {
