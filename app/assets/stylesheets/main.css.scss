@@ -79,6 +79,9 @@ div.container-fluid {
 #products .col-md-4 {
   margin-top: 40px;
 }
+#products .col-md-4:nth-child(1) .form-inline {
+  margin-top: 25px;
+}
 #about-us {
   background-image: image-url('about_bg.jpg');
   background-position: center top;
